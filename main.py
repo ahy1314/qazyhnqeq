@@ -162,7 +162,7 @@ def get_ciba():
 def send_message(to_user, access_token, region_name, weather, temp, wind_dir, note_ch, note_en, max_temp, min_temp,
                  sunrise, sunset, category, pm2p5, proposal, chp):
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
-    week_list = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+    week_list = ["星期日❤", "星期一❤", "星期二❤", "星期三❤", "星期四❤", "星期五❤", "星期六❤"]
     year = localtime().tm_year
     month = localtime().tm_mon
     day = localtime().tm_mday
@@ -246,9 +246,9 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         # 获取距离下次生日的时间
         birth_day = get_birthday(value["birthday"], year, today)
         if birth_day == 0:
-            birthday_data = "今天☺{}☺生日哦，祝☺{}☺生日快乐！".format(value["name"], value["name"])
+            birthday_data = "今天❤{}❤生日哦，祝❤{}❤生日快乐！".format(value["name"], value["name"])
         else:
-            birthday_data = "距离☺{}☺的生日还有☺{}☺天".format(value["name"], birth_day)
+            birthday_data = "距离❤{}❤的生日还剩下最后的{}天❤".format(value["name"], birth_day)
         # 将生日数据插入data
         data["data"][key] = {"value": birthday_data, "color": get_color()}
     headers = {
